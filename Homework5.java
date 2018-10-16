@@ -1,10 +1,21 @@
+/*
+Andrew Cascio
+*/
+
 public class Homework5 {
 
 	/* Finish the constructor and create any necessary instance
 	 * variables
 	 */
-	public Homework5(String s, int a, int b) {
 
+	 private String words;
+	 private static int firstNum;
+	 private static int secondNum;
+
+	public Homework5(String s, int a, int b) {
+			words = s;
+			firstNum = a;
+			secondNum = b;
 	}
 
 	/* Return a substring of the stored String, starting at index with
@@ -16,8 +27,16 @@ public class Homework5 {
 	 * substring method in the String class
 	 */
 	public String substring(int index, int length) {
+			int x = index + length;
+			int y = words.length();
+			if (x < y) {
+				return words.substring(index, x);
+			} else {
+				return words.substring(index, y);
+			}
 
 	}
+
 
 	/* Return true if the stored String contains the provided String,
 	 * return false if it does not. Note that true and false are
@@ -25,13 +44,21 @@ public class Homework5 {
 	 * an example
 	 */
 	public boolean contains(String s) {
-		
+			if (words.indexOf(s) >= 0) {
+				return true;
+			} else {
+					return false;
+			}
 	}
 
 	/* Return the larger of the two stored numbers
 	 */
 	public static int max() {
-
+			if ((firstNum / secondNum) < 1) {
+				return secondNum;
+			} else {
+					return firstNum;
+			}
 	}
 
 	public static void main(String[] args) {
